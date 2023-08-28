@@ -94,3 +94,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* scrollbars setup starts */
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-button {
+  height: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0px white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #929191;
+  border-radius: 10px;
+}
+
+/* navbar scroll thumb setup */
+.navbar::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 10px;
+}
+/* scrollbar finished */
