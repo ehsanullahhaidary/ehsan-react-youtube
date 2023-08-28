@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Buttons from "./components/Buttons";
 import Navbar from "./components/Navbar";
+import Vdeos from "./components/Videos";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <Buttons />
       <Navbar />
+      <Vdeos />
     </div>
   );
 }

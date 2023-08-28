@@ -1,0 +1,31 @@
+/* media for medium sizes
+setup navbar and header bottom buttons */
+@media (min-width: 770px) {
+  .videos-container {
+    margin-left: 80px;
+  }
+}
+
+/* Video part starts */
+/* videos container
+  all videos are inside this */
+.videos-container {
+  margin-top: 135px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 15px;
+  align-items: center;
+  padding-bottom: 30px;
+  gap: 20px;
+}
+
+/* the biggest media
+-showing navbar at larg size 
+-setting up videos sections */
+@media (min-width: 1300px) {
+  .videos-container {
+    margin-left: 250px;
+  }
+}

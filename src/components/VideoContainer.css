@@ -1,0 +1,120 @@
+/* a container for every video */
+.videos-container__video-container {
+  max-width: 340px;
+  width: 240px;
+  flex-grow: 1;
+  max-height: 280px;
+  overflow: hidden;
+  cursor: pointer;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  gap: 5px;
+}
+
+/* video iframe from youtube */
+.videos-container__video-container--iframe {
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* a div for video name and chanell picture */
+.videos-container__video-container--middle-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* video channel image */
+.videos-container__video-container--middle-div img {
+  border-radius: 50%;
+  width: 37px;
+  height: 37px;
+  flex-shrink: 0;
+}
+
+/* video name */
+.videos-container__video-container--middle-div p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* a more options icon at right bottom of videos */
+.videos-container__video-container--middle-div--icon {
+  min-width: 30px;
+  max-width: 30px;
+  min-height: 30px;
+  max-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* hidding the more options icon */
+.videos-container__video-container--middle-div--icon svg {
+  display: none;
+}
+
+/* show more opt icon when hovering video container */
+.videos-container__video-container:hover svg {
+  fill: #585858;
+  display: block;
+}
+
+/* the bottom section of video container
+  -channell name
+  -views
+  -upload time */
+.videos-container__video-container--bottom-div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 47px;
+  margin-right: auto;
+  font-size: 13px;
+  color: #4e4d4d;
+}
+
+/* channel name and views and upload time */
+.videos-container__video-container--bottom-div p:first-of-type {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* chanells name and verified icon */
+.videos-container__video-container--bottom-div--text-icon {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+/* the little verified icon */
+.videos-container__video-container--bottom-div svg {
+  fill: #585858;
+  max-width: 14px;
+  max-height: 14px;
+  margin-left: 5px;
+}
+
+/* views and upload time  */
+.videos-container__video-container--bottom-div > p {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
