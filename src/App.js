@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Buttons from "./components/Buttons";
 import Navbar from "./components/Navbar";
 import Vdeos from "./components/Videos";
+import BottomNav from "./components/BottomNav";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Buttons />
       <Navbar />
       <Vdeos />
+      <BottomNav />
     </div>
   );
 }
