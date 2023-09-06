@@ -9,11 +9,12 @@ import BottomNav from "./components/BottomNav";
 function App() {
   return (
     <div className="app">
-      <Header />
+      <h1>hello</h1>
+      {/* <Header />
       <Buttons />
       <Navbar />
       <Vdeos />
-      <BottomNav />
+      <BottomNav /> */}
     </div>
   );
 }
