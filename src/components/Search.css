@@ -1,0 +1,31 @@
+/* media for medium sizes
+setup navbar and header bottom buttons */
+@media (min-width: 770px) {
+  .searchVideos {
+    margin-left: 80px;
+  }
+}
+
+/* Video part starts */
+/* videos container
+  all videos are inside this */
+.searchVideos {
+  margin-top: 79px;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  padding-bottom: 30px;
+  gap: 20px;
+  width: 100% -80px;
+  height: 100%;
+  background-color: blueviolet;
+}
+
+/* the biggest media
+  -showing navbar at larg size 
+  -setting up videos sections */
+@media (min-width: 1300px) {
+  .searchVideos {
+    margin-left: 250px;
+  }
+}
