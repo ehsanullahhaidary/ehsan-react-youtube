@@ -9,7 +9,8 @@ function Header() {
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
       // Get input value
-      console.log("enter");
+      console.log("aaa");
+      // <Link to={`/search/${inputSearch}`}></Link>;
     }
   };
 
@@ -114,24 +115,26 @@ function Header() {
           />
           {/* vertical line in middle of search input and search icon */}
           <div className="header__middle-icons--vertical-line"></div>
-          <div className="tooltip header__middle-icons--search header__icons--background">
-            {/* middle section search icon */}
-            <svg
-              viewBox="0 0 24 24"
-              preserveAspectRatio="xMidYMid meet"
-              focusable="false"
-              className="tooltip header__icons--size-round style-scope yt-icon"
-              style={{ display: "block", width: "100%", height: "100%" }}
-            >
-              <g className="style-scope yt-icon">
-                <path
-                  d="M20.87,20.17l-5.59-5.59C16.35,13.35,17,11.75,17,10c0-3.87-3.13-7-7-7s-7,3.13-7,7s3.13,7,7,7c1.75,0,3.35-0.65,4.58-1.71 l5.59,5.59L20.87,20.17z M10,16c-3.31,0-6-2.69-6-6s2.69-6,6-6s6,2.69,6,6S13.31,16,10,16z"
-                  className="style-scope yt-icon"
-                ></path>
-              </g>
-            </svg>
-            <span className="tooltiptext">Search</span>
-          </div>
+          <Link to={`/search/${inputSearch}`}>
+            <div className="tooltip header__middle-icons--search header__icons--background">
+              {/* middle section search icon */}
+              <svg
+                viewBox="0 0 24 24"
+                preserveAspectRatio="xMidYMid meet"
+                focusable="false"
+                className="tooltip header__icons--size-round style-scope yt-icon"
+                style={{ display: "block", width: "100%", height: "100%" }}
+              >
+                <g className="style-scope yt-icon">
+                  <path
+                    d="M20.87,20.17l-5.59-5.59C16.35,13.35,17,11.75,17,10c0-3.87-3.13-7-7-7s-7,3.13-7,7s3.13,7,7,7c1.75,0,3.35-0.65,4.58-1.71 l5.59,5.59L20.87,20.17z M10,16c-3.31,0-6-2.69-6-6s2.69-6,6-6s6,2.69,6,6S13.31,16,10,16z"
+                    className="style-scope yt-icon"
+                  ></path>
+                </g>
+              </svg>
+              <span className="tooltiptext">Search</span>
+            </div>
+          </Link>
         </div>
         <div className="tooltip header__second-middle-icons--mic-icon header__icons--background">
           {/* middle section mic icon */}

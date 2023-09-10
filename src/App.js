@@ -26,11 +26,6 @@ function App() {
         />
         <Route path="/search" element={<Search />} />
       </Routes>
-      {/* <Header />
-      <Buttons />
-      <Navbar />
-      <Videos />
-      <BottomNav /> */}
     </div>
   );
 }
