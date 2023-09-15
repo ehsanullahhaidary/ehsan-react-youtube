@@ -1,12 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Buttons.css";
 
+const keyWords = [
+  "All",
+  "Comedy",
+  "JavaScript",
+  "Dawah",
+  "Cars",
+  "Sales",
+  "Tourist destinations",
+  "Python",
+  "Live",
+  "Blockchain",
+  "Computers",
+  "Recently uploaded",
+  "Database",
+  "Gadgets",
+  "Gamming",
+  "New to you",
+];
 function Buttons() {
+  const [activeButton, setActiveButton] = useState("All");
+
+  const clickHandler = (value) => {
+    setActiveButton(value);
+  };
+
   return (
     <div className="second-fixed">
       {/* <!-- Recommendation buttons div at bottom of header --> */}
       <div className="button-section">
         <div className="button-section__buttons-div">
+          {keyWords.map((value, i) => (
+            <button
+              className={
+                activeButton === value
+                  ? "activeButton"
+                  : "button-section__buttons-div--button "
+              }
+              key={i}
+              onClick={() => clickHandler(value)}
+            >
+              {value}
+            </button>
+          ))}
+          {/* 
           <button className="button-section__buttons-div--button">All</button>
           <button className="button-section__buttons-div--button">
             Comedy
@@ -32,7 +70,7 @@ function Buttons() {
             Computers
           </button>
           <button className="button-section__buttons-div--button">
-            Recently upleaded
+            Recently uploaded
           </button>
           <button className="button-section__buttons-div--button">
             Database
@@ -45,7 +83,7 @@ function Buttons() {
           </button>
           <button className="button-section__buttons-div--button">
             New to you
-          </button>
+          </button> */}
         </div>
         <div className="button-section__fade-scroll">
           <div className="button-section__fade-scroll-icon">

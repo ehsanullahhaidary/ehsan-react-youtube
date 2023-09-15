@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Videos.css";
 import VideoContainer from "./VideoContainer";
+import request, { getPopularVideos } from "./VideosAPIHandler";
 
 function Videos() {
+  const [data, setData] = useState(Object);
+
+  const res = async () => {
+    const response = await getPopularVideos();
+    setData(response.items);
+  };
+  // res();
+  console.log(data);
   return (
     <div class="videos-container">
       <VideoContainer

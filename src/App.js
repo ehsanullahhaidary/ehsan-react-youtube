@@ -5,7 +5,7 @@ import Buttons from "./components/Buttons";
 import Navbar from "./components/Navbar";
 import Videos from "./components/Videos";
 import BottomNav from "./components/BottomNav";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Search from "./components/Search";
 
 function App() {
@@ -24,7 +24,8 @@ function App() {
             </div>
           }
         />
-        <Route path="/search" element={<Search />} />
+        <Route path="/search/:searchTerm" element={<Search />} />
+        {/* <Route element={<Navigate replace to="/" />} /> */}
       </Routes>
     </div>
   );

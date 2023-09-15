@@ -10,6 +10,7 @@ with four icons */
   display: none;
   padding-bottom: 70px;
 }
+
 /* media for medium sizes
 setup navbar and header bottom buttons */
 @media (min-width: 770px) {
