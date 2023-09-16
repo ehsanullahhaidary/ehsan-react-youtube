@@ -1,17 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./VideoContainer.css";
+import request from "./VideosAPIHandler";
 
-function VideoContainer({
-  image,
-  title,
-  channel,
-  views,
-  timstamp,
-  channelImage,
-}) {
+function VideoContainer({ video }) {
+  const {
+    id,
+    snippet: {
+      channelId,
+      channelTitle,
+      title,
+      publishedAt,
+      thumbnails: { medium },
+    },
+  } = video;
+
+  const [views, setViews] = useEffect(null);
+  const [duration, setDuration] = useEffect(null);
+
+  useEffect(() => {
+    const get_video_details = async () => {
+      const {
+        data: { items },
+      } = await request("/videos", {
+        params: {
+          part: "contentDetails,statistics",
+          id: id,
+        },
+      });
+      console.log(items, "hi");
+    };
+    get_video_details();
+  }, [id]);
+
   return (
     <div className="videos-container__video-container">
-      <iframe
+      {/* <iframe
         className="videos-container__video-container--iframe"
         width="560"
         height="315"
@@ -20,8 +43,15 @@ function VideoContainer({
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
-      ></iframe>
-      <div className="videos-container__video-container--middle-div">
+      ></iframe> */}
+      <img
+        className="videos-container__video-container--iframe"
+        width="560"
+        height="315"
+        alt=""
+        src={medium.url}
+      />
+      {/* <div className="videos-container__video-container--middle-div">
         <img src={channelImage} alt={channel} />
         <p>{title}</p>
         <div className="videos-container__video-container--middle-div--icon">
@@ -67,7 +97,7 @@ function VideoContainer({
         <p>
           {views} . {timstamp}
         </p>
-      </div>
+      </div> */}
     </div>
     //     <div className="videos-container__video-container">
     //     <iframe

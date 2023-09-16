@@ -5,7 +5,7 @@ import Buttons from "./components/Buttons";
 import Navbar from "./components/Navbar";
 import Videos from "./components/Videos";
 import BottomNav from "./components/BottomNav";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Search from "./components/Search";
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
       <Header />
       <Navbar />
       <BottomNav />
+
       <Routes>
         <Route
           path="/"

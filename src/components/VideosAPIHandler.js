@@ -9,7 +9,7 @@ const request = axios.create({
 
 export const getPopularVideos = async () => {
   try {
-    const { data } = await request.get("/videos", {
+    const res = await request.get("/videos", {
       params: {
         part: "snippet,contentDetails,statistics",
         chart: "mostPopular",
@@ -19,7 +19,7 @@ export const getPopularVideos = async () => {
       },
     });
     //   .then((response) => response.data);
-    return data;
+    return res;
   } catch (error) {}
 };
 
