@@ -14,8 +14,8 @@ function VideoContainer({ video }) {
     },
   } = video;
 
-  const [views, setViews] = useEffect(null);
-  const [duration, setDuration] = useEffect(null);
+  // const [views, setViews] = useEffect(null);
+  // const [duration, setDuration] = useEffect(null);
 
   useEffect(() => {
     const get_video_details = async () => {
@@ -27,10 +27,11 @@ function VideoContainer({ video }) {
           id: id,
         },
       });
-      console.log(items, "hi");
     };
     get_video_details();
   }, [id]);
+
+  console.log(video);
 
   return (
     <div className="videos-container__video-container">
