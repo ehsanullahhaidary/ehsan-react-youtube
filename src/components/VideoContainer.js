@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./VideoContainer.css";
 import request from "./VideosAPIHandler";
 import moment from "moment";
@@ -15,13 +15,12 @@ function VideoContainer({ video }) {
     },
   } = video;
   console.log(video);
+  const [views, setViews] = useState(null);
+  const [duration, setDuration] = useState(null);
 
-  // const [views, setViews] = useEffect(null);
-  // const [duration, setDuration] = useEffect(null);
-
-  // const seconds = moment.duration(duration).asSeconds();
-  // const video_duration = moment.utc(seconds * 1000).format("mm:ss");
-
+  const seconds = moment.duration(duration).asSeconds();
+  const video_duration = moment.utc(seconds * 1000).format("mm:ss");
+  console.log(video_duration);
   // useEffect(() => {
   //   const get_video_details = async () => {
   //     const {
@@ -40,25 +39,15 @@ function VideoContainer({ video }) {
 
   return (
     <div className="videos-container__video-container">
-      {/* <iframe
-        className="videos-container__video-container--iframe"
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/hkP-g9EcYbo"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe> */}
       <img
         className="videos-container__video-container--iframe"
         alt=""
         src={standard.url}
       />
-      {/* <span>{video_duration}</span> */}
+      <span>{video_duration}</span>
 
-      {/* <div className="videos-container__video-container--middle-div">
-        <img src={channelImage} alt={channel} />
+      <div className="videos-container__video-container--middle-div">
+        {/* <img src={channelImage} alt={channel} /> */}
         <p>{title}</p>
         <div className="videos-container__video-container--middle-div--icon">
           <svg
@@ -79,7 +68,7 @@ function VideoContainer({ video }) {
       </div>
       <div className="videos-container__video-container--bottom-div">
         <div className="videos-container__video-container--bottom-div--text-icon">
-          <p>{channel}</p>
+          <p>{channelTitle}</p>
           <svg
             viewBox="0 0 24 24"
             preserveAspectRatio="xMidYMid meet"
@@ -100,10 +89,8 @@ function VideoContainer({ video }) {
             </g>
           </svg>
         </div>
-        <p>
-          {views} . {timstamp}
-        </p>
-      </div> */}
+        <p>{/* {views} . {timstamp} */}</p>
+      </div>
     </div>
     //     <div className="videos-container__video-container">
     //     <iframe
