@@ -21,19 +21,19 @@ function VideoContainer({ video }) {
   const seconds = moment.duration(duration).asSeconds();
   const video_duration = moment.utc(seconds * 1000).format("mm:ss");
 
-  // useEffect(() => {
-  //   const get_video_details = async () => {
-  //     const {
-  //       data: { items },
-  //     } = await request("/videos", {
-  //       params: {
-  //         part: "contentDetails,statistics",
-  //         id: id,
-  //       },
-  //     });
-  //   };
-  //   get_video_details();
-  // }, [id]);
+  useEffect(() => {
+    const get_video_details = async () => {
+      const {
+        data: { items },
+      } = await request("/videos", {
+        params: {
+          part: "contentDetails,statistics",
+          id: id,
+        },
+      });
+    };
+    get_video_details();
+  }, [id]);
 
   // console.log(video);
 
@@ -90,7 +90,6 @@ function VideoContainer({ video }) {
           </svg>
         </div>
         <p>
-          {" "}
           {numeral(views).format("0.a")} views • {moment(publishedAt).fromNow()}
         </p>
       </div>
