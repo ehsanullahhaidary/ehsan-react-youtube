@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from "react";
 import "./Videos.css";
 import VideoContainer from "./VideoContainer";
-// import { getPopularVideos } from "./VideosAPIHandler";
+import { getPopularVideos } from "./VideosAPIHandler";
 
 function Videos() {
-  // const [data, setData] = useState([]);
+  const [data, setData] = useState([]);
   // const [nextPageToken, setNextPageToken] = useState("");
 
-  // useEffect(() => {
-  //   try {
-  //     getPopularVideos().then((res) => {
-  //       setData(res.data.items);
-  //       setNextPageToken(res.data.nextPageToken);
-  //     });
-  //   } catch (error) {}
-  // }, []);
-  // console.log(data, nextPageToken);
-
+  useEffect(() => {
+    try {
+      getPopularVideos().then((res) => {
+        setData(res.data.items);
+        // setNextPageToken(res.data.nextPageToken);
+      });
+    } catch (error) {}
+  }, []);
+  console.log(data, "hi");
+  console.log("first");
   return (
-    <div class="videos-container">
+    <div className="videos-container">
       {/* {data.map((video) => (
         <VideoContainer video={video} key={data.id} />
       ))} */}
