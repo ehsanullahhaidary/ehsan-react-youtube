@@ -5,17 +5,17 @@ import { getPopularVideos } from "./VideosAPIHandler";
 
 function Videos() {
   const [data, setData] = useState([]);
-  // const [nextPageToken, setNextPageToken] = useState("");
+  const [nextPageToken, setNextPageToken] = useState("");
 
   useEffect(() => {
     try {
       getPopularVideos().then((res) => {
         setData(res.data.items);
-        // setNextPageToken(res.data.nextPageToken);
+        setNextPageToken(res.data.nextPageToken);
       });
     } catch (error) {}
   }, []);
-  console.log(data, "hi");
+  console.log(data, nextPageToken);
   console.log("first");
   return (
     <div className="videos-container">
