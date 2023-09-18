@@ -1,37 +1,41 @@
 import React, { useEffect } from "react";
 import "./VideoContainer.css";
 import request from "./VideosAPIHandler";
+import moment from "moment";
 
 function VideoContainer({ video }) {
-  const {
-    id,
-    snippet: {
-      channelId,
-      channelTitle,
-      title,
-      publishedAt,
-      thumbnails: { medium },
-    },
-  } = video;
+  // const {
+  //   id,
+  //   snippet: {
+  //     channelId,
+  //     channelTitle,
+  //     title,
+  //     publishedAt,
+  //     thumbnails: { medium },
+  //   },
+  // } = video;
 
   // const [views, setViews] = useEffect(null);
   // const [duration, setDuration] = useEffect(null);
 
-  useEffect(() => {
-    const get_video_details = async () => {
-      const {
-        data: { items },
-      } = await request("/videos", {
-        params: {
-          part: "contentDetails,statistics",
-          id: id,
-        },
-      });
-    };
-    get_video_details();
-  }, [id]);
+  // const seconds = moment.duration(duration).asSeconds();
+  // const video_duration = moment.utc(seconds * 1000).format("mm:ss");
 
-  console.log(video);
+  // useEffect(() => {
+  //   const get_video_details = async () => {
+  //     const {
+  //       data: { items },
+  //     } = await request("/videos", {
+  //       params: {
+  //         part: "contentDetails,statistics",
+  //         id: id,
+  //       },
+  //     });
+  //   };
+  //   get_video_details();
+  // }, [id]);
+
+  // console.log(video);
 
   return (
     <div className="videos-container__video-container">
@@ -47,11 +51,13 @@ function VideoContainer({ video }) {
       ></iframe> */}
       <img
         className="videos-container__video-container--iframe"
-        width="560"
-        height="315"
         alt=""
-        src={medium.url}
+        src={
+          "https://yt3.ggpht.com/EpunmP_QxObRT33gHSmoZppAf0UniOg5CiQPtxw6LGMfY13Bic_6WfT9xEzHtmODB3IbmRIS=s48-c-k-c0x00ffffff-no-rj"
+        }
       />
+      {/* <span>{video_duration}</span> */}
+
       {/* <div className="videos-container__video-container--middle-div">
         <img src={channelImage} alt={channel} />
         <p>{title}</p>
