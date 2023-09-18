@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./VideoContainer.css";
 import request from "./VideosAPIHandler";
 import moment from "moment";
+import numeral from "numeral";
 
 function VideoContainer({ video }) {
   const {
@@ -14,13 +15,12 @@ function VideoContainer({ video }) {
       thumbnails: { standard },
     },
   } = video;
-  console.log(video);
   const [views, setViews] = useState(null);
   const [duration, setDuration] = useState(null);
 
   const seconds = moment.duration(duration).asSeconds();
   const video_duration = moment.utc(seconds * 1000).format("mm:ss");
-  console.log(video_duration);
+
   // useEffect(() => {
   //   const get_video_details = async () => {
   //     const {
@@ -89,7 +89,10 @@ function VideoContainer({ video }) {
             </g>
           </svg>
         </div>
-        <p>{/* {views} . {timstamp} */}</p>
+        <p>
+          {" "}
+          {numeral(views).format("0.a")} views • {moment(publishedAt).fromNow()}
+        </p>
       </div>
     </div>
     //     <div className="videos-container__video-container">
