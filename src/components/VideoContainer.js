@@ -4,16 +4,17 @@ import request from "./VideosAPIHandler";
 import moment from "moment";
 
 function VideoContainer({ video }) {
-  // const {
-  //   id,
-  //   snippet: {
-  //     channelId,
-  //     channelTitle,
-  //     title,
-  //     publishedAt,
-  //     thumbnails: { medium },
-  //   },
-  // } = video;
+  const {
+    id,
+    snippet: {
+      channelId,
+      channelTitle,
+      title,
+      publishedAt,
+      thumbnails: { standard },
+    },
+  } = video;
+  console.log(video);
 
   // const [views, setViews] = useEffect(null);
   // const [duration, setDuration] = useEffect(null);
@@ -52,9 +53,7 @@ function VideoContainer({ video }) {
       <img
         className="videos-container__video-container--iframe"
         alt=""
-        src={
-          "https://yt3.ggpht.com/EpunmP_QxObRT33gHSmoZppAf0UniOg5CiQPtxw6LGMfY13Bic_6WfT9xEzHtmODB3IbmRIS=s48-c-k-c0x00ffffff-no-rj"
-        }
+        src={standard.url}
       />
       {/* <span>{video_duration}</span> */}
 

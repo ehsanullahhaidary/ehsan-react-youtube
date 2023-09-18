@@ -15,14 +15,12 @@ function Videos() {
       });
     } catch (error) {}
   }, []);
-  console.log(data, nextPageToken);
-  console.log("first");
+
   return (
     <div className="videos-container">
-      {/* {data.map((video) => (
-        <VideoContainer video={video} key={data.id} />
-      ))} */}
-      <VideoContainer />
+      {data.map((video) => (
+        <VideoContainer video={video} key={video.id} />
+      ))}
     </div>
   );
 }
