@@ -1,26 +1,67 @@
 /* a container for every video */
 .videos-container__video-container {
-  max-width: 340px;
-  width: 240px;
+  max-width: 500px;
+  max-height: 310px;
+  width: 280px;
   flex-grow: 1;
-  max-height: 280px;
+  /* max-height: 280px; */
   overflow: hidden;
   cursor: pointer;
   margin-bottom: 15px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   overflow: hidden;
   gap: 5px;
+  background-color: aquamarine;
+  z-index: 1;
 }
 
+.videos-container__video-container:hover {
+  border-radius: 0;
+}
+
+.videos-container__image-container {
+  /* position: relative; */
+}
 /* video iframe from youtube */
 .videos-container__video-container--iframe {
   width: 100%;
+  height: auto;
   border-radius: 15px;
-  object-fit: contain;
+  object-fit: cover;
+  width: 100%;
+  display: inline-block;
+  min-width: 1px;
+  min-height: 1px;
+  background-color: red;
+  padding: 1px;
+  z-index: 2;
+  transition: all 350ms ease-out;
+}
+.videos-container__video-container:hover
+  .videos-container__video-container--iframe {
+  border-radius: 0px;
+  transform: scale(1.01);
+}
+
+.videos-container__video-duraion {
+  position: absolute;
+  bottom: 20px;
+  right: 16px;
+  vertical-align: middle;
+  z-index: 9;
+  background-color: blue;
+}
+
+.videos-container__video-duraion span {
+  max-height: 1.2rem;
+  overflow: hidden;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: inherit;
 }
 
 /* a div for video name and chanell picture */

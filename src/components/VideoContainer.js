@@ -17,6 +17,7 @@ function VideoContainer({ video }) {
   } = video;
   const [views, setViews] = useState(null);
   const [duration, setDuration] = useState(null);
+  const [channelIcon, setChannelIcon] = useState(null);
 
   const seconds = moment.duration(duration).asSeconds();
   const video_duration = moment.utc(seconds * 1000).format("mm:ss");
@@ -31,23 +32,44 @@ function VideoContainer({ video }) {
           id: id,
         },
       });
+      // console.log(items);
+      // console.log(video);
+      setDuration(items[0].contentDetails.duration);
+      setViews(items[0].statistics.viewCount);
     };
     get_video_details();
   }, [id]);
 
-  // console.log(video);
+  useEffect(() => {
+    const get_channel_icon = async () => {
+      const {
+        data: { items },
+      } = await request("/channels", {
+        params: {
+          part: "snippet",
+          id: channelId,
+        },
+      });
+      console.log(items);
+      setChannelIcon(items[0].snippet.thumbnails.default.url);
+    };
+    get_channel_icon();
+  }, [channelId]);
 
   return (
     <div className="videos-container__video-container">
+      <div></div>
       <img
         className="videos-container__video-container--iframe"
         alt=""
         src={standard.url}
       />
-      <span>{video_duration}</span>
+      <div className="videos-container__video-duraion">
+        <span className="">{video_duration}</span>
+      </div>
 
       <div className="videos-container__video-container--middle-div">
-        {/* <img src={channelImage} alt={channel} /> */}
+        <img src={channelIcon} alt={""} />
         <p>{title}</p>
         <div className="videos-container__video-container--middle-div--icon">
           <svg
