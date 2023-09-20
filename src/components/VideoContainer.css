@@ -1,10 +1,9 @@
 /* a container for every video */
 .videos-container__video-container {
   max-width: 500px;
-  max-height: 310px;
+  max-height: 400px;
   width: 280px;
   flex-grow: 1;
-  /* max-height: 280px; */
   overflow: hidden;
   cursor: pointer;
   margin-bottom: 15px;
@@ -13,9 +12,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  overflow: hidden;
   gap: 5px;
-  background-color: aquamarine;
   z-index: 1;
 }
 
@@ -24,48 +21,63 @@
 }
 
 .videos-container__image-container {
-  /* position: relative; */
+  width: 100%;
+  position: relative;
+  /* max-width: 500px;
+  min-width: 310px; */
+
+  /* overflow: hidden; */
 }
 /* video iframe from youtube */
 .videos-container__video-container--iframe {
   width: 100%;
-  height: auto;
-  border-radius: 15px;
+  height: 100%;
+  background-color: transparent;
+  max-height: 280px;
+  border-radius: 10px;
   object-fit: cover;
-  width: 100%;
-  display: inline-block;
   min-width: 1px;
   min-height: 1px;
-  background-color: red;
-  padding: 1px;
   z-index: 2;
   transition: all 350ms ease-out;
 }
+
 .videos-container__video-container:hover
   .videos-container__video-container--iframe {
   border-radius: 0px;
-  transform: scale(1.01);
+  transform: scale(1.016);
 }
 
 .videos-container__video-duraion {
   position: absolute;
-  bottom: 20px;
-  right: 16px;
+  bottom: 0px;
+  right: 0px;
+  margin: 4px;
   vertical-align: middle;
   z-index: 9;
-  background-color: blue;
+
+  display: inline-flex;
+  flex-direction: row;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 3px 4px;
+  /* height: 12px; */
+  border-radius: 4px;
+  line-height: 12px;
+  letter-spacing: 0.5px;
 }
 
 .videos-container__video-duraion span {
   max-height: 1.2rem;
   overflow: hidden;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
   font-family: inherit;
 }
 
 /* a div for video name and chanell picture */
 .videos-container__video-container--middle-div {
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;

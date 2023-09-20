@@ -3,6 +3,7 @@ import "./VideoContainer.css";
 import request from "./VideosAPIHandler";
 import moment from "moment";
 import numeral from "numeral";
+import test from "../images/test.jpg";
 
 function VideoContainer({ video }) {
   const {
@@ -12,9 +13,10 @@ function VideoContainer({ video }) {
       channelTitle,
       title,
       publishedAt,
-      thumbnails: { standard },
+      thumbnails: { medium },
     },
   } = video;
+
   const [views, setViews] = useState(null);
   const [duration, setDuration] = useState(null);
   const [channelIcon, setChannelIcon] = useState(null);
@@ -50,7 +52,6 @@ function VideoContainer({ video }) {
           id: channelId,
         },
       });
-      console.log(items);
       setChannelIcon(items[0].snippet.thumbnails.default.url);
     };
     get_channel_icon();
@@ -58,14 +59,17 @@ function VideoContainer({ video }) {
 
   return (
     <div className="videos-container__video-container">
-      <div></div>
-      <img
-        className="videos-container__video-container--iframe"
-        alt=""
-        src={standard.url}
-      />
-      <div className="videos-container__video-duraion">
-        <span className="">{video_duration}</span>
+      <div className="videos-container__image-container">
+        <img
+          className="videos-container__video-container--iframe"
+          alt=""
+          src={medium.url}
+          style={{ backgroundColor: "transparent" }}
+          // src={test}
+        />
+        <div className="videos-container__video-duraion">
+          <span className="">{video_duration}</span>
+        </div>
       </div>
 
       <div className="videos-container__video-container--middle-div">

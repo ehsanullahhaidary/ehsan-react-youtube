@@ -80,6 +80,7 @@ setup navbar and header bottom buttons */
   align-items: center;
   overflow: hidden;
   justify-content: space-evenly;
+  z-index: 2;
 }
 
 /* bottom nav icons size */
