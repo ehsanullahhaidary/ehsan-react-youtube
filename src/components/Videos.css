@@ -22,6 +22,12 @@ setup navbar and header bottom buttons */
   overflow: hidden;
 }
 
+@media (max-width: 500px) {
+  .videos-container {
+    padding-bottom: 73px;
+  }
+}
+
 /* the biggest media
 -showing navbar at larg size 
 -setting up videos sections */
