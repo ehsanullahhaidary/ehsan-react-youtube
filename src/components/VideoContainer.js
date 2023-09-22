@@ -16,6 +16,7 @@ function VideoContainer({ video }) {
       thumbnails: { medium },
     },
   } = video;
+  // console.log(key);
 
   const _videoId = id?.videoId || id;
 

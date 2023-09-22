@@ -27,11 +27,10 @@ function Videos({ setActiveCat, activeCat }) {
       });
     } catch (error) {}
   }, [activeCat()]);
-
   return (
     <div className="videos-container">
-      {data.map((video) => (
-        <VideoContainer video={video} key={video.id} />
+      {data.map((video, index) => (
+        <VideoContainer video={video} key={index} />
       ))}
     </div>
   );
