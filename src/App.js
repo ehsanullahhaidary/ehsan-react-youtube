@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Buttons from "./components/Buttons";
@@ -9,6 +9,14 @@ import { Routes, Route } from "react-router-dom";
 import Search from "./components/Search";
 
 function App() {
+  const [activeButton, setActiveButton] = useState("All");
+
+  const activeCatagory = () => {
+    return activeButton;
+  };
+  const setActiveCatagory = (value) => {
+    return setActiveButton(value);
+  };
   return (
     <div className="app">
       <Header />
@@ -20,7 +28,10 @@ function App() {
           path="/"
           element={
             <div>
-              <Buttons />
+              <Buttons
+                setActiveCat={setActiveCatagory}
+                activeCat={activeCatagory}
+              />
               <Videos />
             </div>
           }

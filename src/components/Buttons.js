@@ -19,11 +19,12 @@ const keyWords = [
   "Gamming",
   "New to you",
 ];
-function Buttons() {
-  const [activeButton, setActiveButton] = useState("All");
+function Buttons({ setActiveCat, activeCat }) {
+  // const [activeButton, setActiveButton] = useState("All");
 
   const clickHandler = (value) => {
-    setActiveButton(value);
+    // setActiveButton(value);
+    setActiveCat(value);
   };
 
   return (
@@ -34,7 +35,7 @@ function Buttons() {
           {keyWords.map((value, i) => (
             <button
               className={
-                activeButton === value
+                activeCat() === value
                   ? "activeButton"
                   : "button-section__buttons-div--button "
               }
@@ -44,46 +45,6 @@ function Buttons() {
               {value}
             </button>
           ))}
-          {/* 
-          <button className="button-section__buttons-div--button">All</button>
-          <button className="button-section__buttons-div--button">
-            Comedy
-          </button>
-          <button className="button-section__buttons-div--button">
-            JavaScript
-          </button>
-          <button className="button-section__buttons-div--button">Dawah</button>
-          <button className="button-section__buttons-div--button">Cars</button>
-          <button className="button-section__buttons-div--button">Sales</button>
-          <button className="button-section__buttons-div--button">
-            Tourist destinations
-          </button>
-          <button className="button-section__buttons-div--button">Sport</button>
-          <button className="button-section__buttons-div--button">
-            Python
-          </button>
-          <button className="button-section__buttons-div--button">Live</button>
-          <button className="button-section__buttons-div--button">
-            Blockchain
-          </button>
-          <button className="button-section__buttons-div--button">
-            Computers
-          </button>
-          <button className="button-section__buttons-div--button">
-            Recently uploaded
-          </button>
-          <button className="button-section__buttons-div--button">
-            Database
-          </button>
-          <button className="button-section__buttons-div--button">
-            Gadgets
-          </button>
-          <button className="button-section__buttons-div--button">
-            Gamming
-          </button>
-          <button className="button-section__buttons-div--button">
-            New to you
-          </button> */}
         </div>
         <div className="button-section__fade-scroll">
           <div className="button-section__fade-scroll-icon">
