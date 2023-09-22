@@ -17,6 +17,8 @@ function VideoContainer({ video }) {
     },
   } = video;
 
+  const _videoId = id?.videoId || id;
+
   const [views, setViews] = useState(null);
   const [duration, setDuration] = useState(null);
   const [channelIcon, setChannelIcon] = useState(null);
@@ -31,7 +33,7 @@ function VideoContainer({ video }) {
       } = await request("/videos", {
         params: {
           part: "contentDetails,statistics",
-          id: id,
+          id: _videoId,
         },
       });
       // console.log(items);
@@ -40,7 +42,7 @@ function VideoContainer({ video }) {
       setViews(items[0].statistics.viewCount);
     };
     get_video_details();
-  }, [id]);
+  }, [_videoId]);
 
   useEffect(() => {
     const get_channel_icon = async () => {

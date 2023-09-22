@@ -13,31 +13,30 @@ export const getPopularVideos = async () => {
       params: {
         part: "snippet,contentDetails,statistics",
         chart: "mostPopular",
-        regionCode: "US",
+        regionCode: "IN",
         maxResults: 20,
         pageToken: "",
       },
     });
-    console.log(res);
     //   .then((response) => response.data);
     return res;
   } catch (error) {}
 };
 
-// export const getVideosByKeyword = async (keyword) => {
-//   try {
-//     const res = await request.get("/search", {
-//       params: {
-//         part: "snippet",
-//         maxResults: 20,
-//         pageToken: "",
-//         q: keyword,
-//         type: "video",
-//       },
-//     });
-//     //   .then((response) => response.data);
-//     return res;
-//   } catch (error) {}
-// };
+export const getVideosByKeyword = async (keyword) => {
+  try {
+    const res = await request.get("/search", {
+      params: {
+        part: "snippet",
+        maxResults: 20,
+        pageToken: "",
+        q: keyword,
+        type: "video",
+      },
+    });
+    //   .then((response) => response.data);
+    return res;
+  } catch (error) {}
+};
 
 export default request;

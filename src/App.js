@@ -32,7 +32,10 @@ function App() {
                 setActiveCat={setActiveCatagory}
                 activeCat={activeCatagory}
               />
-              <Videos />
+              <Videos
+                setActiveCat={setActiveCatagory}
+                activeCat={activeCatagory}
+              />
             </div>
           }
         />
