@@ -241,12 +241,12 @@ function Navbar() {
         <h2 className="navber__subscriptions--h2">Subscriptions</h2>
         <div className="navbar__subscriptions--div">
           <img
-            src="https://yt3.ggpht.com/FjeN785fVWx0Pr6xCbwPhhq8hHj_gocc3FygDXYDEQgp2gE_FQzRNsFHFAjQ3oE-VJaeGR1a=s88-c-k-c0x00ffffff-no-rj"
-            alt="sonney sangha"
+            src="https://yt3.ggpht.com/ytc/AIdro_nKK_IiXxsBeL6bwORDwkcVCsMbkjQMXaDbLzu3i_wqgg=s88-c-k-c0x00ffffff-no-rj"
+            alt="Ali Dawah"
             className="navbar__subscriptions--div--img"
           />
           <p className="navbar__subscriptions--div--chanel-name">
-            Sonney Sangha
+            Ali Dawah
           </p>
         </div>
         <div className="navbar__subscriptions--div">
